@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mixify/music/music_main.dart';
 import "MusicAppBar.dart";
 import 'FloatingButton.dart';
 import 'package:flutter/services.dart';
-import 'music_player.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'Songs.dart';
 
@@ -20,12 +20,7 @@ class _LikedSongsState extends State<LikedSongs> {
         TextButton(
           onPressed: (){
             Songs.songNumber=i;
-            isPlaying=true;
-            musicPlayer=MusicPlayer();
-            setState(() {
-              print(Songs.songNumber);
-              print(isPlaying);
-            });
+            play();
           },
           child: Row(
             children: <Widget>[
@@ -62,23 +57,26 @@ class _LikedSongsState extends State<LikedSongs> {
       );
       likedSongs.add(Songs.songs[i][0]);
     }
+    rows.add(SizedBox(height: 100,));
     songCard = Column(
       children: rows,
     );
+
   }
   List<Widget> rows = <Widget>[];
   List<String> likedSongs=[];
   late Column songCard;
 
-  MusicPlayer musicPlayer=MusicPlayer();
+  //MusicPlayer musicPlayer=MusicPlayer();
 
+  late Widget body;
   @override
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
 
+    body=SingleChildScrollView(child: songCard);
     return Scaffold(
-        appBar: MusicAppBar.appBar("Liked Songs", context),
-        floatingActionButton: FloatingButton.floatingButton(context),
+        //floatingActionButton: FloatingButton.floatingButton(context),
         body: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -90,12 +88,7 @@ class _LikedSongsState extends State<LikedSongs> {
               ],
             ),
           ),
-          child: SlidingUpPanel(
-            body: songCard,
-            panel: musicPlayer,
-            maxHeight: 800,
-            minHeight: 80,
-          ),
+          child: body,
         ),
       );
   }
