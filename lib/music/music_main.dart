@@ -81,7 +81,9 @@ class _MusicMainState extends State<MusicMain> {
 
   void playSong() async {
     //await audioPlayer.pause();
-
+    List<String>temp=Songs.songs[Songs.songNumber];
+    Songs.listeningHistory.remove(Songs.songs[Songs.songNumber]);
+    Songs.listeningHistory.add(temp);
     await audioPlayer.play(AssetSource(currentSong));
   }
 

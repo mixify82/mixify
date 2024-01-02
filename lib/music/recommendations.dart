@@ -17,10 +17,7 @@ class _RecommendationsState extends State<Recommendations> {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
 
     return Scaffold(
-      drawer: AppNavigator.appDrawer(context),
-      appBar: MusicAppBar.appBar("Recommendations",context),
       backgroundColor: Colors.grey[900],
-      floatingActionButton: FloatingButton.floatingButton(context),
     );
   }
 }

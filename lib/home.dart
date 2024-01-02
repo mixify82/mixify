@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import "music/liked_songs.dart";
-import 'movies/home.dart';
+import 'movies/base_page.dart';
+import 'movies/base_page.dart';
 import 'package:flutter/services.dart';
+import 'movies/movie_home_page.dart';
+import 'music/music_main.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -50,7 +52,7 @@ class _HomeState extends State<Home> {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.purple[800],
+        backgroundColor: Colors.deepPurple,
         title: RichText(
           text: TextSpan(
             children: [
@@ -103,7 +105,7 @@ class _HomeState extends State<Home> {
                     musicLabel,
                     style: TextStyle(
                       fontSize: 19,
-                      color: Colors.purple[800],
+                      color: Colors.deepPurple,
                     ),
                   ),
                   TextButton(
@@ -111,7 +113,7 @@ class _HomeState extends State<Home> {
                       setState(
                         () {
                           //Navigator.pop(context);
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => const LikedSongs()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const MusicMain()));
                         }
                       );
                     },
@@ -135,7 +137,7 @@ class _HomeState extends State<Home> {
                         child: Icon(
                           Icons.music_note_sharp,
                           size: musicImageWidth,
-                          color: Colors.purple[800],
+                          color: Colors.deepPurple,
                         ),
                       ),
                     ),
@@ -163,7 +165,7 @@ class _HomeState extends State<Home> {
                     movieLabel,
                     style: TextStyle(
                       fontSize: 19,
-                      color: Colors.purple[800],
+                      color: Colors.deepPurple,
                     ),
                   ),
                   TextButton(
@@ -171,7 +173,7 @@ class _HomeState extends State<Home> {
                       Navigator.pop(context);
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const MovieHome())
+                        MaterialPageRoute(builder: (context) => const MovieHomePage())
                       );
                     },
                     onLongPress: () {
@@ -194,7 +196,7 @@ class _HomeState extends State<Home> {
                         child: Icon(
                           Icons.local_movies_rounded,
                           size: movieImageWidth,
-                          color: Colors.purple[800],
+                          color: Colors.deepPurple,
                         ),
                       ),
                     ),

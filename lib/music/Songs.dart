@@ -1,4 +1,3 @@
-import 'music_player.dart';
 class Songs{
   static List<List<String>> songs = [
     [
@@ -43,7 +42,16 @@ class Songs{
       "Very, Slowly",
       "BIBI"
     ],
+    [
+      "Very,Slowly-BIBI.mp3",
+      "assets/Very,Slowly-BIBI.png",
+      "Very, Slowly",
+      "BIBI"
+    ],
   ];
+
+  static List<List<String>> listeningHistory=[];
+
   static int songNumber=0;
 
 }
