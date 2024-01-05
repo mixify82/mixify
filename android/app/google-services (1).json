@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "704726820236",
+    "firebase_url": "https://mixify-eec5d-default-rtdb.firebaseio.com",
+    "project_id": "mixify-eec5d",
+    "storage_bucket": "mixify-eec5d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704726820236:android:2aa52e55737f62acf8e2a9",
+        "android_client_info": {
+          "package_name": "com.example.mixify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdY5n15knC0hpD6kvHnruspVlWoQsxuYY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
